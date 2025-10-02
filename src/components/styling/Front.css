@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+.front-container {
+  
+  height: 100%; 
+  width: 100%;
+  
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+  font-family: 'Inter', sans-serif;
+  
+  
+  animation: fadeIn 0.8s ease-out;
+
+  
+  background-color: #121212;
+  
+  border-radius: 12px;
+}
+
+
+.front-container h1 {
+  font-size: 2.8rem; 
+  font-weight: 700;
+  color: #ffffff; 
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+}
+
+
+.front-container h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a9a9a9; 
+  margin-bottom: 2.5rem; 
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; 
+}
+
+
+.button-container a {
+  
+  width: 280px; 
+  box-sizing: border-box;
+  text-align: center;
+  
+  
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  
+  
+  color: #FFD700; 
+  background-color: transparent;
+  border: 1px solid #FFD700; 
+  border-radius: 8px; 
+  
+  
+  transition: all 0.2s ease-in-out;
+}
+
+
+.button-container a:hover {
+  background-color: #FFD700; 
+  color: #121212; 
+  border-color: #FFD700; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); 
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

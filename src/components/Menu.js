@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom"; 
 import './styling/Menu.css';
-import api from "./Apicall";
+
 
 export default function Menu() {
   

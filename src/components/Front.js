@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './styling/Front.css'; 
-import api from "./Apicall";
+
 export default function Front() {
   
   return (

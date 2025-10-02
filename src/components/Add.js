@@ -21,7 +21,7 @@ export default function Add() {
     }
 
     try {
-      const res = await api.post("/api/employees", {
+      const res = await api.post("/employees", {
         empNo,
         empName,
         empSal,

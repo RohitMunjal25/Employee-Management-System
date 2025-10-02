@@ -19,7 +19,7 @@ export default function Modify() {
     }
 
     try {
-      await api.put(`/api/employees/${empNo}`, {
+      await api.put(`/employees/${empNo}`, {
         empName,
         empSal,
       });

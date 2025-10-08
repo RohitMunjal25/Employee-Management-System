@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from './Apicall';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom'; 
 import './styling/login.css'
@@ -16,7 +16,7 @@ export default function AuthPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://backend-employee-management-system-rleq.onrender.com/login', {
+      const res = await api.post('/login', {
         userName: formData.username,
         password: formData.password,
       });
@@ -34,7 +34,7 @@ export default function AuthPage() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://backend-employee-management-system-rleq.onrender.com/register', {
+      await api.post('/register', {
         userName: formData.username,
         password: formData.password,
       });
@@ -75,7 +75,7 @@ export default function AuthPage() {
 
   return (
     <div className="auth-welcome">
-      <h2>Welcome to Your System</h2>
+      <h2>Welcome to Employee Management System Demo</h2>
       <p>Please log in or register to continue.</p>
       <div className="auth-buttons">
         <button onClick={() => setView('login')}>Login</button>

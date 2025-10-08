@@ -15,7 +15,7 @@ export default function Delete() {
 
     try {
       const empNo = Number(id);
-      await api.delete(`/employees/${empNo}`);
+      await api.delete(`${process.env.REACT_APP_API_URL}/api/employees/${empNo}`);
       Swal.fire("Deleted!", `Employee ${empNo} has been removed.`, "success");
       setId("");
     } catch (err) {

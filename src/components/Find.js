@@ -13,7 +13,7 @@ export default function Find() {
       return;
     }
     try {
-      const res = await api.get(`/employees/${empNo}`);
+      const res = await api.get(`${process.env.REACT_APP_API_URL}/api/employees/${empNo}`);
       setEmployee(res.data);
     } catch (err) {
       console.error(err);

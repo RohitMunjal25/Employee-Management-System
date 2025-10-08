@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "./Apicall";
 import swal from 'sweetalert';
 import './styling/Modify.css';
 
@@ -7,9 +7,7 @@ export default function Modify() {
   const [empNo, setEmpNo] = useState("");
   const [empName, setEmpName] = useState("");
   const [empSal, setEmpSal] = useState("");
-  const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL
-});
+  
 
   const handleModify = async (e) => {
     e.preventDefault();
@@ -19,7 +17,7 @@ export default function Modify() {
     }
 
     try {
-      await api.put(`/employees/${empNo}`, {
+      await api.put(`${process.env.REACT_APP_API_URL}/api/employees/${empNo}`, {
         empName,
         empSal,
       });

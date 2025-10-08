@@ -10,7 +10,7 @@ export default function FindAll() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const res = await api.get("/employees");
+        const res = await api.get(`${process.env.REACT_APP_API_URL}/api/employees`);
         setEmployees(res.data);
       } catch (err) {
         console.error(err);

@@ -21,7 +21,7 @@ export default function Add() {
     }
 
     try {
-      const res = await api.post("/employees", {
+      const res = await api.post(`${process.env.REACT_APP_API_URL}/api/employees`, {
         empNo,
         empName,
         empSal,

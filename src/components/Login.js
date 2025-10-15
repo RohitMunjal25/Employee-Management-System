@@ -47,7 +47,7 @@ export default function AuthPage() {
 
   if (view === 'login') {
     return (
-      <div className="auth-form-container">
+      <div className="login-page-container">
         <h2>Login</h2>
         <form onSubmit={handleLogin} className="auth-form">
           <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} />
@@ -61,7 +61,7 @@ export default function AuthPage() {
 
   if (view === 'register') {
     return (
-      <div className="auth-form-container">
+      <div className="login-page-container">
         <h2>Register</h2>
         <form onSubmit={handleRegister} className="auth-form">
           <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} />

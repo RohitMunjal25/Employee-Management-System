@@ -2,16 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #121212; 
-  display: flex;
+.login-page-container{
+   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  width: 100%;
+  height: 100%;
 }
-
 
 .auth-welcome,
 .auth-form-container {

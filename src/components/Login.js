@@ -74,7 +74,7 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="auth-welcome">
+    <div className="login-page-container">
       <h2>Welcome to Employee Management System Demo</h2>
       <p>Please log in or register to continue.</p>
       <div className="auth-buttons">

@@ -48,3 +48,20 @@
   color: #121212;
   font-weight: 700;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px; 
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem; 
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .sidebar a {
+    padding: 15px 0;
+    text-align: center;
+  }
+}

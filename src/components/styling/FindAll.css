@@ -74,3 +74,18 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    box-shadow: inset -10px 0 8px -8px rgba(0,0,0,0.2);
+  }
+
+  .findall-container th, .findall-container td {
+    padding: 12px 15px;
+    white-space: nowrap; 
+  }
+
+  .findall-container h2 {
+    font-size: 1.8rem;
+  }
+}

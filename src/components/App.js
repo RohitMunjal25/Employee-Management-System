@@ -14,10 +14,7 @@ import FindAll from './Findall';
 import AuthPage from './Login';
 import SecureRoute from './Secureroute';
 
-function PrivateRoute({ children }) {
-  const token = localStorage.getItem('token');
-  return token ? children : <Navigate to="/" />;
-}
+
 
 
 function MainLayout() {
@@ -54,9 +51,9 @@ export default function App() {
         <Route 
           path="/*" 
           element={
-            <PrivateRoute>
+           
               <MainLayout />
-            </PrivateRoute>
+           
           } 
         />
       </Routes>

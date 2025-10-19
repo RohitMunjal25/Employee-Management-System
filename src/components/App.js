@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation , useNavigate } from 'react-router-dom';
 import './styling/App.css'; 
 
 
@@ -12,7 +12,7 @@ import Modify from './Modify';
 import Find from './Find';
 import FindAll from './Findall';
 import AuthPage from './Login';
-import SecureRoute from './Secureroute';
+import SecureRoute from './SecureRoute';
 
 
 

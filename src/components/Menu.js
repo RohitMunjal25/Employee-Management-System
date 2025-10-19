@@ -1,10 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom"; 
+import { NavLink, useNavigate } from "react-router-dom"; 
 import './styling/Menu.css';
 
 
 export default function Menu() {
   
+const navigate=useNavigate();
+
+const handleLogout=e=>{
+  e.preventDefault();
+  localStorage.removeItem('token');
+  navigate('/');
+}
   return (
     <div className="sidebar">
       <h2 className="menu-title">EMS</h2>
@@ -14,6 +21,7 @@ export default function Menu() {
         <NavLink to="/modify" className="menu-link">Modify Employee</NavLink>
         <NavLink to="/find" className="menu-link">Find Employee</NavLink>
         <NavLink to="/findall" className="menu-link">Find All Employees</NavLink>
+        <a href="/" className="Logout" onClick={handleLogout}>Logout</a>
         
       </nav>
     </div>

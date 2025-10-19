@@ -48,13 +48,11 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SecureRoute><AuthPage/> </SecureRoute>} />
-        <Route 
+        <Route
           path="/*" 
           element={
-           
-              <MainLayout />
-           
-          } 
+          <SecureRoute isPrivate={true}><MainLayout /> </SecureRoute>
+        } 
         />
       </Routes>
     </Router>

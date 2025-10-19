@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import api from './Apicall';
+import api from './Apicall'; 
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom'; 
-import './styling/login.css'
+import './styling/login.css'; 
 
 export default function AuthPage() {
   const navigate = useNavigate(); 
@@ -11,6 +11,11 @@ export default function AuthPage() {
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const changeView = (newView) => {
+    setFormData({ username: '', password: '' });
+    setView(newView);
   };
 
   const handleLogin = async (e) => {
@@ -39,7 +44,7 @@ export default function AuthPage() {
         password: formData.password,
       });
       swal("Success!", "Registration successful! Please log in.", "success")
-        .then(() => setView('login'));
+        .then(() => changeView('login')); 
     } catch (err) {
       swal("Error!", "Username may already be taken.", "error");
     }
@@ -48,13 +53,15 @@ export default function AuthPage() {
   if (view === 'login') {
     return (
       <div className="login-page-container">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin} className="auth-form">
-          <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} />
-          <input name="password" type="password" placeholder="Password" required onChange={handleInputChange} />
-          <button type="submit">Log In</button>
-        </form>
-        <button className="back-button" onClick={() => setView('main')}>Back</button>
+        <div className="auth-form-container">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin} className="auth-form">
+            <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} value={formData.username} />
+            <input name="password" type="password" placeholder="Password" required onChange={handleInputChange} value={formData.password} />
+            <button type="submit">Log In</button>
+          </form>
+          <button className="back-button" onClick={() => changeView('main')}>Back</button>
+        </div>
       </div>
     );
   }
@@ -62,24 +69,28 @@ export default function AuthPage() {
   if (view === 'register') {
     return (
       <div className="login-page-container">
-        <h2>Register</h2>
-        <form onSubmit={handleRegister} className="auth-form">
-          <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} />
-          <input name="password" type="password" placeholder="Password" required onChange={handleInputChange} />
-          <button type="submit">Create Account</button>
-        </form>
-        <button className="back-button" onClick={() => setView('main')}>Back</button>
+        <div className="auth-form-container">
+          <h2>Register</h2>
+          <form onSubmit={handleRegister} className="auth-form">
+            <input name="username" type="text" placeholder="Username" required onChange={handleInputChange} value={formData.username} />
+            <input name="password" type="password" placeholder="Password" required onChange={handleInputChange} value={formData.password} />
+            <button type="submit">Create Account</button>
+          </form>
+          <button className="back-button" onClick={() => changeView('main')}>Back</button>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="login-page-container">
-      <h2>Welcome to Employee Management System Demo</h2>
-      <p>Please log in or register to continue.</p>
-      <div className="auth-buttons">
-        <button onClick={() => setView('login')}>Login</button>
-        <button onClick={() => setView('register')}>Register</button>
+      <div className="auth-welcome">
+        <h2>Welcome to Employee Management System Demo</h2>
+        <p>Please log in or register to continue.</p>
+        <div className="auth-buttons">
+          <button onClick={() => changeView('login')}>Login</button>
+          <button onClick={() => changeView('register')}>Register</button>
+        </div>
       </div>
     </div>
   );

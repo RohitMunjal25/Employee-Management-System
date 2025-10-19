@@ -12,7 +12,7 @@ import Modify from './Modify';
 import Find from './Find';
 import FindAll from './Findall';
 import AuthPage from './Login';
-
+import SecureRoute from './Secureroute';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -28,7 +28,7 @@ function MainLayout() {
 
   return (
     <div className="container">
-      {/* Conditionally render the Menu based on our rule */}
+      
       {showMenu && <Menu />}
       
       <div className="output">
@@ -50,7 +50,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AuthPage />} />
+        <Route path="/" element={<SecureRoute><AuthPage/> </SecureRoute>} />
         <Route 
           path="/*" 
           element={

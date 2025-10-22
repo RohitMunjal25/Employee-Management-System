@@ -48,7 +48,6 @@
   color: #121212;
   font-weight: 700;
 }
-
 @media (max-width: 768px) {
   .sidebar {
     width: 70px; 
@@ -58,18 +57,14 @@
     font-size: 1.2rem; 
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    margin-bottom: 2rem; 
   }
 
   .sidebar a {
-    padding: 15px 0;
+    padding: 10px 5px; 
     text-align: center;
+    font-size: 0.85rem; 
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
   }
-}
-.menu-nav {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; 
-}
-.Logout{
-  margin-top: auto; 
 }
